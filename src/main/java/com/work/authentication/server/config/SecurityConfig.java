@@ -70,7 +70,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    private Filter customUsernamePasswordAuthenticationFilter() throws Exception {
+     Filter customUsernamePasswordAuthenticationFilter() throws Exception {
         CustomPasswordAuthenticationFilter filter = new CustomPasswordAuthenticationFilter();
         //set the authentication manager
         filter.setAuthenticationManager(authenticationManager());

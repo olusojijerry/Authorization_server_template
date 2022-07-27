@@ -1,6 +1,8 @@
 package com.work.authentication.server.service;
 
 import com.work.authentication.server.domain.MainUsers;
+import com.work.authentication.server.entity.CoreUser;
+import com.work.authentication.server.repository.services.CoreUsersService;
 import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,9 +21,17 @@ public class AuthUserService {
 
     @Autowired
     EntityManager entityManager;
+    @Autowired
+    CoreUsersService coreUsersService;
 
     @Transactional
     public void updateUsersInfo(@NonNull Long userId, @NonNull String branchNo, @NonNull MainUsers mainUsers){
 
     }
+
+    public CoreUser findByUsername(String username){
+        return coreUsersService.findByusername(username);
+    }
+
+
 }
