@@ -9,6 +9,6 @@ import javax.transaction.Transactional;
 
 @Transactional
 @Repository
-public interface CoreUserRepository extends PagingAndSortingRepository<CoreUser, Long>, QuerydslPredicateExecutor<CoreUser> {
+public interface CoreUserRepository extends PagingAndSortingRepository<CoreUser, Long> {
     CoreUser findByUsername(String username);
 }

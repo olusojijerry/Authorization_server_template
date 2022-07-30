@@ -9,5 +9,5 @@ public interface CoreUsersService {
     Optional<CoreUser> findById(Long id);
     CoreUser createOrUpdate(CoreUser coreUser);
     CoreUser findByusername(String username);
-    Optional<CoreUser> findOne(Predicate predicate);
+//    Optional<CoreUser> findOne(Predicate predicate);
 }

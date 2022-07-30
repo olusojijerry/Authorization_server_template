@@ -4,5 +4,5 @@ import com.work.authentication.server.entity.CoreRole;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface CoreRolesRepository extends PagingAndSortingRepository<CoreRole, Long>, QuerydslPredicateExecutor<CoreRole> {
+public interface CoreRolesRepository extends PagingAndSortingRepository<CoreRole, Long> {
 }

@@ -34,17 +34,19 @@
 </head>
 <body>
 <div style="padding: 15px;" class="title">
-    <form action="" method="post">
+    <form class="form-signin" method="POST" th:action="@{/login}">
         <div class="header title">
             <h4>Login Form</h4>
         </div>
         <div class="form-field">
-            <label for="uname"><b>Username: </b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required><br>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" class="form-control"
+                   placeholder="Username" required autofocus>
         </div>
         <div class="form-field">
-            <label class="form-field" for="psw"><b>Password:</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required><br>
+            <label for="password" >Password</label>
+            <input type="password" id="password" name="password" class="form-control"
+                   placeholder="Password" required>
         </div>
         <div class="title">
             <button type="submit">Login</button>

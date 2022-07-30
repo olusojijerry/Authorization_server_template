@@ -4,10 +4,10 @@ server:
 encryption:
   key-store:
     alias: mytest
-    location: file:C:/Users/olusoji/IdeaProjects/oauth2-server/keystore.jks
+    location: file:/Users/olusoji/IdeaProjects/oauth2-server/keystore.jks
     classpath-loc: keystore.jks
-    password: password1
-    secret: password1
+    password: mypass
+    secret: mypass
 core:
   service:
     db:

@@ -7,9 +7,11 @@ import com.work.authentication.server.service.AuthUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
 /*this class retrieve the user from the database and sets it to the oauth mainusers entity*/
+@Service
 public class CurrentUsersDetails implements UserDetailsService {
     @Autowired
     AuthUserService authUserService;
@@ -18,6 +20,9 @@ public class CurrentUsersDetails implements UserDetailsService {
         MainUsers mainUsers = new MainUsers();
 
         CoreUser coreUser = authUserService.findByUsername(username);
+
+        if(ObjectUtils.isEmpty(coreUser))
+            throw new UsernameNotFoundException("User does not exist");
 
         mainUsers.setEnabled(true);
         mainUsers.setUsername(coreUser.getUsername());

@@ -34,7 +34,7 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
     @Autowired
     CurrentUsersDetails currentUsersDetails;
     @Autowired
-    @Qualifier("customAuthenticationManagerBean")
+    @Qualifier("authenticationManagerBean")
     AuthenticationManager authenticationManager;
     @Autowired
     ResourceLoader resourceLoader;
@@ -53,6 +53,11 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
         TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
 
         tokenEnhancerChain.setTokenEnhancers(Arrays.asList(tokenEnhancer, accessTokenConverter()));
+        endpoints.userDetailsService(currentUsersDetails);
+        endpoints.tokenStore(tokenStore())
+                .tokenEnhancer(tokenEnhancerChain)
+                .accessTokenConverter(accessTokenConverter())
+                .authenticationManager(authenticationManager);
     }
 
     @Bean

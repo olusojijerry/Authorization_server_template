@@ -25,8 +25,8 @@ public class CoreUserServiceImpl implements CoreUsersService{
         return coreUserRepository.findByUsername(username);
     }
 
-    @Override
-    public Optional<CoreUser> findOne(Predicate predicate) {
-        return coreUserRepository.findOne(predicate);
-    }
+//    @Override
+//    public Optional<CoreUser> findOne(Predicate predicate) {
+//        return coreUserRepository.findOne(predicate);
+//    }
 }

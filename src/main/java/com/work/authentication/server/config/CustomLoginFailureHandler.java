@@ -7,6 +7,6 @@ public class CustomLoginFailureHandler extends SimpleUrlAuthenticationFailureHan
     CustomLoginFailureHandler(){
         this.setRedirectStrategy(new CustomFailureRedirectStrategy());
         //set the default redirect page in static folder
-        this.setDefaultFailureUrl("");
+        this.setDefaultFailureUrl("/login");
     }
 }
